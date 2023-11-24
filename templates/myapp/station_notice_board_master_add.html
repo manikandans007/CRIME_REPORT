@@ -1,0 +1,30 @@
+{% extends 'myapp/station_base.html' %}
+{% load static %}
+{% block title %}Notice Board Add{% endblock %}
+{% block body %}
+<center>
+    <h1>Notice Board Add</h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'station_notice_board_master_add'%}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title :</label>
+            <input class="form-control" type="text" name="title" id="title" value="" required>
+        </div>
+
+       <div class="form-group">
+            <label for="document">Document :</label>
+            <input class="form-control" type="file" name="document" id="document" required>
+        </div>
+        <div class="form-group">
+            <label for="descp">descp :</label>
+            <textarea class="form-control"  name="descp" id="descp"  required></textarea>
+        </div>
+
+       <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

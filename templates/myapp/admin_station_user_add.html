@@ -1,0 +1,41 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %}New Station User Registration{% endblock %}
+{% block body %}
+<center>
+    <h2>New Station User Registration</h2>
+	<div class="container">
+    <form role="form" name="frm" action="{% url 'admin_station_user_add' %}" method="post">
+        {% csrf_token %}
+		<input type="hidden" name="police_station_id" value="{{police_station_id}}">
+        <div class="form-group">
+			<label for="name">Name</label>
+	        <input class="form-control" type="text"  id="name" name="name" placeholder=" name" required="required">
+
+		</div>
+	    <div class="form-group">
+			<label for="designation">designation</label>
+	        <input type="text"  class="form-control" id="designation" name="designation">
+		</div>
+
+
+	    <div class="form-group">
+			<label for="contact">Contact</label>
+	        <input type="text"  class="form-control" id="contact" name="contact" placeholder="Enter contact">
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+	        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email id"></td>
+		</div>
+        <div class="form-group">
+			<label for="pwd">password</label>
+	        <input type="password" class="form-control" id="pwd" name="pwd"></td>
+		</div>
+	    <button type="submit" class="btn btn-info" id="bt" name="bt">Register</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+	    </table>
+    </form>
+	{{msg}}
+	</div>
+</center>
+{% endblock %}

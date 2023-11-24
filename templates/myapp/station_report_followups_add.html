@@ -1,0 +1,22 @@
+{% extends 'myapp/station_base.html' %}
+{% load static %}
+{% block title %}Complaint Followup Entry{% endblock %}
+{% block body %}
+<center>
+    <h1>Complaint Followup Entry</h1>
+     <div class="container">
+    <form role="form" name="frm" action="{% url 'station_report_followups_add'%}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="report_id" value="{{report_id}}">
+        <div class="form-group">
+            <label for="remarks">Remarks :</label>
+            <textarea class="form-control" name="remarks" id="remarks"></textarea>
+        </div>
+
+       <button type="submit" class="btn btn-info" id="bt" name="bt">Submit</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Clear</button>
+    </form>
+     </div>
+    <h3>{{msg}}</h3>
+</center>
+{% endblock %}

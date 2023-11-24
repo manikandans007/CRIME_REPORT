@@ -1,0 +1,27 @@
+{% extends 'myapp/admin_base.html' %}
+{% load static %}
+{% block title %}Crime Type Add{% endblock %}
+{% block body %}
+<center>
+    <h2><font color="#366092">Crime Type Add</font></h2>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+            <div class="col">
+    <form role="form" name="frm" action="{% url 'admin_crime_type_add' %}" method="post">
+            {% csrf_token %}
+        <div class="form-group">
+            <label for="type_name">Type name</label>
+            <input class="form-control" type="text"  id="type_name" name="type_name" placeholder="Enter type_name" required="required">
+        </div>
+
+        <button type="submit" class="btn btn-info" id="bt" name="bt">Add</button>
+        <button type="reset" class="btn btn-info" id="rt" name="rt">Reset</button>
+            {{msg}}
+    </form>
+</div>
+        <div class="col"></div>
+    </div>
+</div>
+</center>
+{% endblock %}

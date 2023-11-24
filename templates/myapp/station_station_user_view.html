@@ -1,0 +1,68 @@
+{% extends 'myapp/station_base.html' %}
+{% load static %}
+{% block title %}Stations User List{% endblock %}
+{% block body %}
+
+<center>
+    <h2><font color="#366092">Stations User List</font></h2>
+<div class="container">
+    <form name="frm" action="" method="post">
+            {% csrf_token %}
+        <input type="hidden" name="police_station_id" value="{{police_station_id}}">
+         <table class="table table-striped table-bordered auto-index table-dark">
+      <thead>
+        <tr>
+            <th>Sl.No</th>
+            <th>Station</th>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Date / Time</th>
+        <!--    <th>Action</th> -->
+        </tr>
+        </thead>
+        {% for l in user_list %}
+             <tbody>
+        <tr class="info ">
+            <td></td>
+            <td>
+                {% for pl in station_list %}
+                    {% if pl.id == l.police_station_id %}
+                        {{ pl.station_name }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>{{ l.name }}</td>
+            <td>{{ l.designation }}</td>
+            <td>{{ l.contact }}</td>
+            <td>{{ l.email }}</td>
+            <td>{{ l.dt }}, {{ l.tm }}</td>
+            <!--<td>
+               <a href="../admin_station_user_delete?id={{l.id}}&police_station_id={{police_station_id}}" class="btn btn-danger" role="button">Delete</a>
+            </td>-->
+        </tr>
+        </tbody>
+        {% endfor %}
+        </table>
+        <br/>
+      <!--  <a href="../admin_station_user_add?police_station_id={{police_station_id}}" class="btn btn-primary" role="button">Add User</a>-->
+    </form>
+    {{msg}}
+</div>
+</center>
+<style>
+  form
+  {
+    counter-reset: Serial;
+  }
+  table
+  {
+  }
+  .auto-index td:first-child:before
+  {
+    counter-increment: Serial;
+    content:counter(Serial);
+  }
+</style>
+{% endblock %}
