@@ -10,9 +10,7 @@ An online platform that allows citizens to report crimes directly to their local
 - [Modules](#-modules)
 - [Tech Stack](#-tech-stack)
 - [System Requirements](#-system-requirements)
-- [Screenshots](#-screenshots)
 - [Future Enhancements](#-future-enhancements)
-- [Author](#-author)
 
 ---
 
@@ -71,18 +69,7 @@ The **Crime Report System** is a Django-based web application that allows users 
 | Storage             | 20 GB                     | 40 GB                     |
 
 ---
-
-## 🖼️ Screenshots
-
-> *(Add screenshots in the repo and update file paths)*
-
-- `index.png` – Landing Page  
-- `admin_login.png` – Admin Login  
-- `user_complaint.png` – Complaint Form  
-- `police_dashboard.png` – Police Dashboard  
-- `feedback.png` – User Feedback  
-
----
+ 
 
 ## 🧪 Testing
 
@@ -102,11 +89,4 @@ The **Crime Report System** is a Django-based web application that allows users 
 
 ---
 
-## 👨‍💻 Author
-
-- **Manikandan S**  
-  Department of Computer Engineering  
-  Government Polytechnic College, Kalamassery
-
----
 
